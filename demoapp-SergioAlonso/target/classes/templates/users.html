@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios</title>
+</head>
+<body>
+<h1 th:if="${users.isEmpty()}">Sin resultados</h1>
+<ul th:each="user: ${users}">
+    <li th:text="${user.toString}"></li>
+</ul>
+</body>
+</html>

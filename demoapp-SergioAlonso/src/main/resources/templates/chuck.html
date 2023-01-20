@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuck</title>
+</head>
+<!--/*@thymesVar id="quote" type="demoapp.model.Quote"*/-->
+<body th:object="${quote}">
+  <h1>Chiste (malo) de Chuck Norris:</h1>
+  <h2 th:text="*{value}" />
+  <h3>Visualiza esta cita en la <a th:href="*{url}">página original</a> </h3>
+</body>
+</html>

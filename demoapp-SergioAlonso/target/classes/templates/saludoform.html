@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+<!--/*@thymesVar id="userData" type="demoapp.model.UserData"*/-->
+  <form th:action="@{/saludoform}" th:object="${userData}" method="post">
+    <table>
+      <tr>
+        <td>Nombre:</td>
+        <td>
+          <input type="text" th:field="*{nombre}" />
+        </td>
+        <td th:if="${#fields.hasErrors('nombre')}">El nombre debe tener entre 3 y 30 caracteres</td>
+      </tr>
+      <tr>
+        <td>Edad: </td>
+        <td>
+          <input type="number" th:field="*{edad}">
+        </td>
+        <td th:if="${#fields.hasErrors('edad')}">La edad debe ser mayor que 18</td>
+      </tr>
+      <tr>
+        <td>DNI: </td>
+        <td>
+          <input type="text" th:field="*{dni}">
+        </td>
+        <td th:if="${#fields.hasErrors('dni')}">Formato de DNI no válido</td>
+        <td>
+          <button type="submit">Enviar</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
